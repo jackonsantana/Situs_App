@@ -1,7 +1,11 @@
 // admin_web/src/Login.tsx
 import { useState } from 'react';
 
-export default function Login({ onLogin }: { onLogin: () => void }) {
+interface Props {
+  onLogin: () => void;
+}
+
+export default function Login({ onLogin }: Props) {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
 
@@ -11,28 +15,30 @@ export default function Login({ onLogin }: { onLogin: () => void }) {
       localStorage.setItem('auth', 'true');
       onLogin();
     } else {
-      alert('Login ou senha inválidos');
+      alert('Credenciais inválidas');
     }
   };
 
   return (
-    <div style={{ padding: 20, textAlign: 'center' }}>
-      <h2>Login Admin</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          placeholder="E-mail"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        /><br /><br />
-        <input
-          type="password"
-          placeholder="Senha"
-          value={senha}
-          onChange={(e) => setSenha(e.target.value)}
-        /><br /><br />
-        <button type="submit">Entrar</button>
-      </form>
-    </div>
+    <form onSubmit={handleSubmit} style={{ padding: 20 }}>
+      <h2>Login de Acesso</h2>
+      <input
+        type="email"
+        placeholder="E-mail"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        required
+        style={{ display: 'block', marginBottom: 10 }}
+      />
+      <input
+        type="password"
+        placeholder="Senha"
+        value={senha}
+        onChange={(e) => setSenha(e.target.value)}
+        required
+        style={{ display: 'block', marginBottom: 10 }}
+      />
+      <button type="submit">Entrar</button>
+    </form>
   );
 }
