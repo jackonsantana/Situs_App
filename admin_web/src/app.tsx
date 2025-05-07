@@ -10,7 +10,10 @@ export default function App() {
     setAuth(isAuth);
   }, []);
 
-  const handleLogin = () => setAuth(true);
+  const handleLogin = () => {
+    localStorage.setItem('auth', 'true');
+    setAuth(true);
+  };
 
   if (!auth) return <Login onLogin={handleLogin} />;
 
