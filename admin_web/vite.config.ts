@@ -1,17 +1,18 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import path from 'path'
+// admin_web/vite.config.ts
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import path from 'path';
 
 export default defineConfig({
   root: './src',
-  plugins: [react()],
   build: {
     outDir: '../dist',
-    emptyOutDir: true,
+    emptyOutDir: true
   },
+  plugins: [react()],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
-    },
-  },
-})
+      '@': path.resolve(__dirname, './src')
+    }
+  }
+});
