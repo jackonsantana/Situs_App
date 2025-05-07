@@ -1,4 +1,3 @@
-// admin_web/src/App.tsx
 import { useState, useEffect } from 'react';
 import Login from './Login';
 
@@ -19,8 +18,8 @@ export default function App() {
 
   return (
     <div style={{ padding: 20 }}>
-      <h1>Bem-vindo ao Painel do Admin</h1>
-      <p>Aqui é onde seu conteúdo administrativo será exibido.</p>
+      <h1>Painel Administrativo do Situs</h1>
+      <p>Login de teste ativado. Acesso liberado para admin@situs.com | 123456.</p>
     </div>
   );
 }
