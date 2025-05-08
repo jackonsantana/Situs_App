@@ -1,25 +1,12 @@
-import { useState, useEffect } from 'react';
-import Login from './Login';
+import React from 'react';
+import ComandoIA from './ComandoIA';
 
-export default function App() {
-  const [auth, setAuth] = useState(false);
-
-  useEffect(() => {
-    const isAuth = localStorage.getItem('auth') === 'true';
-    setAuth(isAuth);
-  }, []);
-
-  const handleLogin = () => {
-    localStorage.setItem('auth', 'true');
-    setAuth(true);
-  };
-
-  if (!auth) return <Login onLogin={handleLogin} />;
-
+function App() {
   return (
-    <div style={{ padding: 20 }}>
-      <h1>Painel Administrativo do Situs</h1>
-      <p>Login de teste ativado. Acesso liberado para admin@situs.com | 123456.</p>
+    <div className="App">
+      <ComandoIA />
     </div>
   );
 }
+
+export default App;
