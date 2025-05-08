@@ -1,10 +1,10 @@
 import React from 'react';
-import ComandoIA from './ComandoIA';
+import Comando from './Comando';
 
 function App() {
   return (
     <div className="App">
-      <ComandoIA />
+      <Comando />
     </div>
   );
 }
