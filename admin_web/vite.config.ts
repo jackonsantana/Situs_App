@@ -2,12 +2,12 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import path from 'path'
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  root: './',
+  root: 'src', // 👈 define que a raiz do projeto está na pasta src
   build: {
-    outDir: 'dist',
+    outDir: '../dist', // 👈 para o dist ir fora de src
+    emptyOutDir: true,
     rollupOptions: {
       input: path.resolve(__dirname, 'src/index.html'),
     },
